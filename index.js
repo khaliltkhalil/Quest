@@ -60,6 +60,13 @@ function renderJob(job) {
     document.querySelector("#modal").style.display = "block";
     document.body.style.overflow = "hidden";
   });
+
   jobComponent.appendChild(editButton);
   jobsContainer.appendChild(jobComponent);
 }
+
+const closeModalBtn = document.querySelector(".close-btn");
+closeModalBtn.addEventListener("click", () => {
+  document.querySelector("#modal").style.display = "none";
+  document.body.style.overflow = "auto";
+});
