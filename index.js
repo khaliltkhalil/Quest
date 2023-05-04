@@ -42,6 +42,8 @@ function renderJob(job) {
   const jobsContainer = document.querySelector(`#${job.status}`);
 
   const jobComponent = document.createElement("div");
+  jobComponent.setAttribute("id", `${job.id}`);
+
   const title = document.createElement("h3");
   title.textContent = job.title;
   jobComponent.appendChild(title);
@@ -98,7 +100,5 @@ editForm.addEventListener("submit", (e) => {
     body: JSON.stringify(editedJob),
   })
     .then((res) => res.json())
-    .then((job) => {
-      console.log(job);
-    });
+    .then((job) => {});
 });
