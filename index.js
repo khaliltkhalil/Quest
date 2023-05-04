@@ -28,7 +28,13 @@ form.addEventListener("submit", (e) => {
     body: JSON.stringify(newJob),
   })
     .then((res) => res.json())
-    .then((addedJob) => renderJob(addedJob));
+    .then((addedJob) => {
+      renderJob(addedJob);
+      e.target.title.value = "";
+      e.target.company.value = "";
+      e.target.location.value = "";
+      e.target.status.value = "applied";
+    });
 });
 
 function renderJob(job) {
