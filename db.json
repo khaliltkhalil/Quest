@@ -5,7 +5,7 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "applied"
+      "status": "interview"
     },
     {
       "id": 2,
@@ -65,11 +65,10 @@
     },
     {
       "title": "IOS Engineer",
-      "company": "META",
+      "company": "Meta",
       "location": "San Diego, CA",
-      "status": "interview",
+      "status": "applied",
       "id": 10
     }
-    
   ]
 }

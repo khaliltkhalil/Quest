@@ -78,3 +78,27 @@ closeModalBtn.addEventListener("click", () => {
   document.querySelector("#modal").style.display = "none";
   document.body.style.overflow = "auto";
 });
+
+const editForm = document.querySelector("#edit-form");
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const jobId = document.querySelector("#job-id").textContent;
+  const editedJob = {
+    title: e.target.editTitle.value,
+    company: e.target.editCompany.value,
+    location: e.target.editLocation.value,
+    status: e.target.editStatus.value,
+  };
+  fetch(`http://localhost:3000/jobs/${jobId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(editedJob),
+  })
+    .then((res) => res.json())
+    .then((job) => {
+      console.log(job);
+    });
+});
