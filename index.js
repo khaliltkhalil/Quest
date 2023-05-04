@@ -53,5 +53,6 @@ function renderJob(job) {
   location.textContent = job.location;
   jobComponent.appendChild(location);
   jobComponent.className = "job-component";
+
   jobsContainer.appendChild(jobComponent);
 }
