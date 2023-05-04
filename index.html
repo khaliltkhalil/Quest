@@ -10,7 +10,7 @@
 <body>
     <h1 id="app-name">Quest</h1>
     <section>
-        <form id="add-job-form">
+        <form>
             <div class="input-section">
                 <label for="title">Job title:</label>
                 <input type ="text" id="title" name="title">
@@ -71,7 +71,32 @@
         </div>
     </section>
     <div id="modal">
-        
+        <div id="edit-form-container">
+            <form id="edit-form">
+                <div class="input-section">
+                    <label for="title">Job title:</label>
+                    <input type ="text" id="title" name="title">
+                </div>
+                <div class="input-section">
+                    <label for="company">Company:</label>
+                    <input type ="text" id="company" name="company">
+                </div>
+                <div class="input-section">
+                    <label for="location">Location:</label>
+                    <input type ="text" id="location" name="location">
+                </div>
+                <div class="input-section">
+                    <label for="status">Status:</label>
+                    <select name="status" id="status">
+                        <option value="applied">Applied</option>
+                        <option value="interview">Interview</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="offer">Offer</option>
+                      </select>
+                </div>
+                <input class="btn" type="submit" value="Add job">
+            </form>
+        </div>
     </div>
     <script type="text/javascript" src="index.js"></script>
 </body>

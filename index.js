@@ -1,3 +1,5 @@
+fetchJobs();
+
 function fetchJobs() {
   fetch("http://localhost:3000/jobs")
     .then((res) => res.json())
@@ -7,8 +9,6 @@ function fetchJobs() {
       });
     });
 }
-
-fetchJobs();
 
 const form = document.querySelector("#add-job-form");
 form.addEventListener("submit", (e) => {
