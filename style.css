@@ -21,3 +21,18 @@
     gap: 5px;
 }
 
+.jobs-box {
+    width: 70%;
+    height: 600px;
+    margin: auto;
+    border: solid;
+}
+
+#jobs-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
