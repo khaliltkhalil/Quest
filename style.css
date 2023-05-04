@@ -35,4 +35,19 @@
     gap: 10px;
 }
 
+.job-component {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+    border: solid;
+}
+
+.jobs-container {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+}
+
 

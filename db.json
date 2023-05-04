@@ -3,37 +3,37 @@
         {
             "id": 1,
             "title": "Software Engineer I",
-            "Company": "Google",
-            "Location": "Austin, Tx",
-            "Status": "applied"
+            "company": "Google",
+            "location": "Austin, Tx",
+            "status": "applied"
         },
         {
             "id": 1,
             "title": "Software Engineer I",
-            "Company": "Google",
-            "Location": "Austin, Tx",
-            "Status": "applied"
+            "company": "Google",
+            "location": "Austin, Tx",
+            "status": "applied"
         },
         {
             "id": 1,
             "title": "Software Engineer I",
-            "Company": "Google",
-            "Location": "Austin, Tx",
-            "Status": "rejected"
+            "company": "Google",
+            "location": "Austin, Tx",
+            "status": "rejected"
         },
         {
             "id": 1,
             "title": "Software Engineer I",
-            "Company": "Google",
-            "Location": "Austin, Tx",
-            "Status": "offer"
+            "company": "Google",
+            "location": "Austin, Tx",
+            "status": "offer"
         },
         {
             "id": 1,
             "title": "Software Engineer I",
-            "Company": "Google",
-            "Location": "Austin, Tx",
-            "Status": "interview"
+            "company": "Google",
+            "location": "Austin, Tx",
+            "status": "interview"
         }
         
 
