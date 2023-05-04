@@ -59,6 +59,14 @@ function renderJob(job) {
   editButton.addEventListener("click", () => {
     document.querySelector("#modal").style.display = "block";
     document.body.style.overflow = "hidden";
+
+    document.querySelector("#job-id").textContent = `${job.id}`;
+
+    const editForm = document.querySelector("#edit-form");
+    editForm.editTitle.value = job.title;
+    editForm.editCompany.value = job.company;
+    editForm.editLocation.value = job.location;
+    editForm.editStatus.value = job.status;
   });
 
   jobComponent.appendChild(editButton);
