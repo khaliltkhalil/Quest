@@ -53,6 +53,8 @@ function renderJob(job) {
   location.textContent = job.location;
   jobComponent.appendChild(location);
   jobComponent.className = "job-component";
-
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  jobComponent.appendChild(editButton);
   jobsContainer.appendChild(jobComponent);
 }
