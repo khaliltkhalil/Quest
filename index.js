@@ -19,7 +19,16 @@ form.addEventListener("submit", (e) => {
     location: e.target.location.value,
     status: e.target.status.value,
   };
-  console.log(newJob);
+  fetch("http://localhost:3000/jobs", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(newJob),
+  })
+    .then((res) => res.json())
+    .then((addedJob) => renderJob(addedJob));
 });
 
 function renderJob(job) {

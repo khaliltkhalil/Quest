@@ -1,41 +1,67 @@
 {
-    "jobs": [
-        {
-            "id": 1,
-            "title": "Software Engineer I",
-            "company": "Google",
-            "location": "Austin, Tx",
-            "status": "applied"
-        },
-        {
-            "id": 2,
-            "title": "Software Engineer I",
-            "company": "Google",
-            "location": "Austin, Tx",
-            "status": "applied"
-        },
-        {
-            "id": 3,
-            "title": "Software Engineer I",
-            "company": "Google",
-            "location": "Austin, Tx",
-            "status": "rejected"
-        },
-        {
-            "id": 4,
-            "title": "Software Engineer I",
-            "company": "Google",
-            "location": "Austin, Tx",
-            "status": "offer"
-        },
-        {
-            "id": 5,
-            "title": "Software Engineer I",
-            "company": "Google",
-            "location": "Austin, Tx",
-            "status": "interview"
-        }
-        
-
-    ]
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Software Engineer I",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "applied"
+    },
+    {
+      "id": 2,
+      "title": "Software Engineer I",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "applied"
+    },
+    {
+      "id": 3,
+      "title": "Software Engineer I",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "rejected"
+    },
+    {
+      "id": 4,
+      "title": "Software Engineer I",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "offer"
+    },
+    {
+      "id": 5,
+      "title": "Software Engineer I",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "interview"
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Amazon",
+      "location": "Houston, Tx",
+      "status": "applied",
+      "id": 6
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Amazon",
+      "location": "Houston, Tx",
+      "status": "interview",
+      "id": 7
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Amazon",
+      "location": "Houston, Tx",
+      "status": "rejected",
+      "id": 8
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Amazon",
+      "location": "Houston, Tx",
+      "status": "offer",
+      "id": 9
+    }
+  ]
 }
