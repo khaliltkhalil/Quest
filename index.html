@@ -11,14 +11,28 @@
     <h1 id="app-name">Quest</h1>
     <section>
         <form class="search-form">
-            <label for="title">Job title:</label>
-            <input type ="text" id="title" name="title">
-            <label for="company">Company:</label>
-            <input type ="text" id="company" name="company">
-            <label for="location">Location:</label>
-            <input type ="text" id="location" name="location">
-            <label for="status">status:</label>
-            <input type ="text" id="status" name="status">
+            <div class="input-section">
+                <label for="title">Job title:</label>
+                <input type ="text" id="title" name="title">
+            </div>
+            <div class="input-section">
+                <label for="company">Company:</label>
+                <input type ="text" id="company" name="company">
+            </div>
+            <div class="input-section">
+                <label for="location">Location:</label>
+                <input type ="text" id="location" name="location">
+            </div>
+            <div class="input-section">
+                <label for="status">Status:</label>
+                <select name="status" id="status">
+                    <option value="applied">Applied</option>
+                    <option value="interview">Interview</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="offer">Offer</option>
+                  </select>
+            </div>
+            <input class="btn" type="submit" value="Add job">
         </form>
     </section>
     <script type="text/javascript" src="index.js"></script>

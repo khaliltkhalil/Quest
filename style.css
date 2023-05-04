@@ -13,4 +13,11 @@
     flex-direction: column;
     width: 40%;
     margin: 20px auto 0 auto;
+    gap: 10px;
+} 
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
+
