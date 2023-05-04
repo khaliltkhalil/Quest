@@ -10,6 +10,18 @@ function fetchJobs() {
 
 fetchJobs();
 
+const form = document.querySelector("#add-job-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newJob = {
+    title: e.target.title.value,
+    company: e.target.company.value,
+    location: e.target.location.value,
+    status: e.target.status.value,
+  };
+  console.log(newJob);
+});
+
 function renderJob(job) {
   // select the container that matches the job status
   const jobsContainer = document.querySelector(`#${job.status}`);
@@ -28,5 +40,3 @@ function renderJob(job) {
   jobComponent.className = "job-component";
   jobsContainer.appendChild(jobComponent);
 }
-
-function create(job) {}
