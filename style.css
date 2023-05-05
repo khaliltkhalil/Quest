@@ -38,12 +38,12 @@ form {
 
 .jobs-box {
     width: 70%;
-    height: 300px;
+    height: fit-content;
     margin: auto;
-    
     border-radius: 0px 5px 5px 5px;
     box-shadow: 0px 8px 3px  gray;
     background-color: white;
+    padding-bottom: 20px;
 }
 
 #jobs-section {
@@ -51,6 +51,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    position: relative;
 }
 
 .job-component {
@@ -78,7 +79,7 @@ form {
     border-radius: 5px 5px 0 0;
     position: relative;
     height: 20px;
-    top: -24px;
+    top: -30px;
     background-color: white;
     box-shadow: 0px 0px 3px  gray;
     z-index: -1;

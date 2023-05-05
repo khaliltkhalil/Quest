@@ -5,7 +5,7 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "interview"
+      "status": "applied"
     },
     {
       "id": 2,
@@ -33,13 +33,13 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "interview"
+      "status": "applied"
     },
     {
       "title": "Product Engineer",
       "company": "Amazon",
       "location": "Houston, Tx",
-      "status": "offer",
+      "status": "rejected",
       "id": 9
     },
     {
