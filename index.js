@@ -59,8 +59,7 @@ function renderJob(job) {
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
   editButton.addEventListener("click", () => {
-    document.querySelector("#modal").style.display = "block";
-    document.body.style.overflow = "hidden";
+    openMoodal();
 
     document.querySelector("#job-id").textContent = `${job.id}`;
     const jobComponent = document.querySelector(`#job-${job.id}`);
@@ -118,4 +117,9 @@ function editJobComponent(job) {
     const newContainer = document.querySelector(`#${job.status}`);
     newContainer.appendChild(jobComponent);
   }
+}
+
+function openMoodal() {
+  document.querySelector("#modal").style.display = "block";
+  document.body.style.overflow = "hidden";
 }

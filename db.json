@@ -19,14 +19,14 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "offer"
+      "status": "interview"
     },
     {
       "id": 4,
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "offer"
+      "status": "applied"
     },
     {
       "id": 5,
@@ -48,6 +48,13 @@
       "location": "San Francesco, CA",
       "status": "applied",
       "id": 10
+    },
+    {
+      "title": "Machine Learning ",
+      "company": "Google",
+      "location": "Austin, Tx",
+      "status": "offer",
+      "id": 11
     }
   ]
 }
