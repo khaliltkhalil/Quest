@@ -77,10 +77,7 @@ function renderJob(job) {
 }
 
 const closeModalBtn = document.querySelector(".close-btn");
-closeModalBtn.addEventListener("click", () => {
-  document.querySelector("#modal").style.display = "none";
-  document.body.style.overflow = "auto";
-});
+closeModalBtn.addEventListener("click", closeModal);
 
 const editForm = document.querySelector("#edit-form");
 editForm.addEventListener("submit", (e) => {
@@ -122,4 +119,9 @@ function editJobComponent(job) {
 function openMoodal() {
   document.querySelector("#modal").style.display = "block";
   document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.querySelector("#modal").style.display = "none";
+  document.body.style.overflow = "auto";
 }
