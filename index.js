@@ -58,6 +58,7 @@ function renderJob(job) {
   jobComponent.className = "job-component";
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
+  editButton.className = "btn edit-btn";
   editButton.addEventListener("click", () => {
     openMoodal();
 
