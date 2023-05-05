@@ -42,7 +42,7 @@ function renderJob(job) {
   const jobsContainer = document.querySelector(`#${job.status}`);
 
   const jobComponent = document.createElement("div");
-  jobComponent.setAttribute("id", `${job.id}`);
+  jobComponent.setAttribute("id", `job-${job.id}`);
 
   const title = document.createElement("h3");
   title.textContent = job.title;
@@ -63,12 +63,14 @@ function renderJob(job) {
     document.body.style.overflow = "hidden";
 
     document.querySelector("#job-id").textContent = `${job.id}`;
-
+    const jobComponent = document.querySelector(`#job-${job.id}`);
+    const currentContainer = jobComponent.parentNode;
+    const status = currentContainer.getAttribute("id");
     const editForm = document.querySelector("#edit-form");
-    editForm.editTitle.value = job.title;
-    editForm.editCompany.value = job.company;
-    editForm.editLocation.value = job.location;
-    editForm.editStatus.value = job.status;
+    editForm.editTitle.value = jobComponent.querySelector("h3").textContent;
+    editForm.editCompany.value = jobComponent.querySelector("h3").textContent;
+    editForm.editLocation.value = jobComponent.querySelector("h3").textContent;
+    editForm.editStatus.value = status;
   });
 
   jobComponent.appendChild(editButton);
@@ -100,5 +102,16 @@ editForm.addEventListener("submit", (e) => {
     body: JSON.stringify(editedJob),
   })
     .then((res) => res.json())
-    .then((job) => {});
+    .then((job) => {
+      console.log(jobId);
+      editJobComponent(job);
+    });
 });
+
+function editJobComponent(job) {
+  const jobComponent = document.querySelector(`#job-${job.id}`);
+  console.log(jobComponent);
+  jobComponent.querySelector("h3").textContent = job.title;
+  jobComponent.querySelector("h4").textContent = job.company;
+  jobComponent.querySelector("p").textContent = job.location;
+}

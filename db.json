@@ -9,10 +9,10 @@
     },
     {
       "id": 2,
-      "title": "Software Engineer I",
+      "title": "Software Engineer II",
       "company": "Google",
-      "location": "Austin, Tx",
-      "status": "applied"
+      "location": "Los Angels, CA",
+      "status": "rejected"
     },
     {
       "id": 3,
@@ -51,9 +51,9 @@
     },
     {
       "title": "Product Engineer",
-      "company": "Amazon",
-      "location": "Houston, Tx",
-      "status": "rejected",
+      "company": "Product Engineer",
+      "location": "Product Engineer",
+      "status": "applied",
       "id": 8
     },
     {
