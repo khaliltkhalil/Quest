@@ -19,7 +19,7 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "rejected"
+      "status": "offer"
     },
     {
       "id": 4,
@@ -33,28 +33,7 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "interview"
-    },
-    {
-      "title": "Product Engineer",
-      "company": "Amazon",
-      "location": "Houston, Tx",
-      "status": "applied",
-      "id": 6
-    },
-    {
-      "title": "Product Engineer",
-      "company": "Amazon",
-      "location": "Houston, Tx",
-      "status": "interview",
-      "id": 7
-    },
-    {
-      "title": "Product Engineer",
-      "company": "Product Engineer",
-      "location": "Product Engineer",
-      "status": "applied",
-      "id": 8
+      "status": "applied"
     },
     {
       "title": "Product Engineer",
@@ -64,9 +43,9 @@
       "id": 9
     },
     {
-      "title": "IOS Engineer",
-      "company": "Meta",
-      "location": "San Diego, CA",
+      "title": "IOS Engineer I",
+      "company": "Apple",
+      "location": "San Francesco, CA",
       "status": "applied",
       "id": 10
     }

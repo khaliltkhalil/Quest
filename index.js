@@ -68,8 +68,8 @@ function renderJob(job) {
     const status = currentContainer.getAttribute("id");
     const editForm = document.querySelector("#edit-form");
     editForm.editTitle.value = jobComponent.querySelector("h3").textContent;
-    editForm.editCompany.value = jobComponent.querySelector("h3").textContent;
-    editForm.editLocation.value = jobComponent.querySelector("h3").textContent;
+    editForm.editCompany.value = jobComponent.querySelector("h4").textContent;
+    editForm.editLocation.value = jobComponent.querySelector("p").textContent;
     editForm.editStatus.value = status;
   });
 
@@ -103,15 +103,19 @@ editForm.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((job) => {
-      console.log(jobId);
       editJobComponent(job);
     });
 });
 
 function editJobComponent(job) {
   const jobComponent = document.querySelector(`#job-${job.id}`);
-  console.log(jobComponent);
+  const currentContainer = jobComponent.parentNode;
+  const currentStatus = currentContainer.getAttribute("id");
   jobComponent.querySelector("h3").textContent = job.title;
   jobComponent.querySelector("h4").textContent = job.company;
   jobComponent.querySelector("p").textContent = job.location;
+  if (job.status !== currentStatus) {
+    const newContainer = document.querySelector(`#${job.status}`);
+    newContainer.appendChild(jobComponent);
+  }
 }
