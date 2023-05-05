@@ -20,7 +20,16 @@ form {
     width: 40%;
     margin: 20px auto 0 auto;
     gap: 10px;
+    
 } 
+
+#add-job-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 3px  gray;
+}
+
 .input-section {
     display: flex;
     flex-direction: column;
@@ -31,14 +40,17 @@ form {
     width: 70%;
     height: 300px;
     margin: auto;
-    border: solid;
+    
+    border-radius: 5px;
+    box-shadow: 0px 8px 3px  gray;
+    background-color: white;
 }
 
 #jobs-section {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .job-component {
@@ -46,14 +58,16 @@ form {
     flex-direction: column;
     gap: 3px;
     padding: 5px;
-    border: solid;
+    background-color: rgb(70, 173, 247);
     width: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 3px  gray;
 }
 
 .jobs-container {
     display:flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
 }
 
