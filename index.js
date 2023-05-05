@@ -114,6 +114,8 @@ function editJobComponent(job) {
     const newContainer = document.querySelector(`#${job.status}`);
     newContainer.appendChild(jobComponent);
   }
+
+  closeModal();
 }
 
 function openMoodal() {
