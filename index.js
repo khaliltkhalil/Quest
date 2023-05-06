@@ -87,12 +87,12 @@ function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
   // hide component afer dragStart finish
   setTimeout(() => {
-    e.target.classList.add("hide");
+    e.target.classList.add("transparent");
   }, 0);
 }
 
 function dragEnd(e) {
-  e.target.classList.remove("hide");
+  e.target.classList.remove("transparent");
 }
 
 const jobsContainers = document.querySelectorAll(".jobs-container");
@@ -106,14 +106,15 @@ jobsContainers.forEach((jobsContainer) => {
 
 function dragEnter(e) {
   // make sure the dropzone is not another job component
-  e.preventDefault();
+
   if (e.target.className === "jobs-container") {
+    e.preventDefault();
     e.target.parentNode.classList.add("drag-over");
   }
 }
 function dragOver(e) {
-  e.preventDefault();
   if (e.target.className === "jobs-container") {
+    e.preventDefault();
     e.target.parentNode.classList.add("drag-over");
   }
 }
@@ -125,13 +126,7 @@ function drop(e) {
   // get the draggable element
   const id = e.dataTransfer.getData("text/plain");
   const draggable = document.getElementById(id);
-  if (
-    e.target.className !== "job-component" &&
-    e.target.parentNode.className !== "job-component"
-  ) {
-    e.target.appendChild(draggable);
-  }
-  draggable.classList.remove("hide");
+  e.target.appendChild(draggable);
 }
 
 const closeModalBtn = document.querySelector(".close-btn");

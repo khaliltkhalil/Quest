@@ -150,8 +150,8 @@ form {
     font-size: 12px;
 }
 
-.hide {
-    display: none;
+.transparent {
+    opacity: 0.3;
 }
 
 .drag-over {
