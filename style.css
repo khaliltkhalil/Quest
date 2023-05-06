@@ -40,6 +40,7 @@ form {
 .jobs-box {
     width: 70%;
     height: fit-content;
+    
     margin: auto;
     border-radius: 0px 5px 5px 5px;
     box-shadow: 0px 8px 3px  gray;
@@ -62,6 +63,7 @@ form {
     padding: 5px;
     background-color: rgb(87, 165, 221);
     width: 200px;
+    height:fit-content;
     border-radius: 5px;
     box-shadow: 0px 8px 3px  gray;
     
@@ -72,6 +74,7 @@ form {
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
+    min-height: 120px;
 }
 
 .tab {
