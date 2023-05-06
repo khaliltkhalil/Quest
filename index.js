@@ -90,34 +90,42 @@ function dragStart(e) {
   }, 0);
 }
 
-const jobsBoxes = document.querySelectorAll(".jobs-container");
+const jobsContainers = document.querySelectorAll(".jobs-container");
 
-jobsBoxes.forEach((jobsbox) => {
-  jobsbox.addEventListener("dragenter", dragEnter);
-  jobsbox.addEventListener("dragover", dragOver);
-  jobsbox.addEventListener("dragleave", dragLeave);
-  jobsbox.addEventListener("drop", drop);
+jobsContainers.forEach((jobsContainer) => {
+  jobsContainer.addEventListener("dragenter", dragEnter);
+  jobsContainer.addEventListener("dragover", dragOver);
+  jobsContainer.addEventListener("dragleave", dragLeave);
+  jobsContainer.addEventListener("drop", drop);
 });
 
 function dragEnter(e) {
+  // make sure the dropzone is not another job component
   e.preventDefault();
-
-  e.target.parentNode.classList.add("drag-over");
+  if (e.target.className === "jobs-container") {
+    e.target.parentNode.classList.add("drag-over");
+  }
 }
 function dragOver(e) {
   e.preventDefault();
-  e.target.parentNode.classList.add("drag-over");
+  if (e.target.className === "jobs-container") {
+    e.target.parentNode.classList.add("drag-over");
+  }
 }
 function dragLeave(e) {
   e.target.parentNode.classList.remove("drag-over");
 }
 function drop(e) {
   e.target.parentNode.classList.remove("drag-over");
-
   // get the draggable element
   const id = e.dataTransfer.getData("text/plain");
   const draggable = document.getElementById(id);
-  e.target.appendChild(draggable);
+  if (
+    e.target.className !== "job-component" &&
+    e.target.parentNode.className !== "job-component"
+  ) {
+    e.target.appendChild(draggable);
+  }
   draggable.classList.remove("hide");
 }
 
