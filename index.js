@@ -56,6 +56,7 @@ function renderJob(job) {
   location.textContent = job.location;
   jobComponent.appendChild(location);
   jobComponent.className = "job-component";
+  jobComponent.setAttribute("draggable", true);
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
   editButton.className = "btn edit-btn";
