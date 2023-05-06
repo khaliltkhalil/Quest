@@ -59,6 +59,7 @@ function renderJob(job) {
   jobComponent.setAttribute("draggable", true);
 
   jobComponent.addEventListener("dragstart", dragStart);
+  jobComponent.addEventListener("dragend", dragEnd);
 
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
@@ -88,6 +89,10 @@ function dragStart(e) {
   setTimeout(() => {
     e.target.classList.add("hide");
   }, 0);
+}
+
+function dragEnd(e) {
+  e.target.classList.remove("hide");
 }
 
 const jobsContainers = document.querySelectorAll(".jobs-container");
