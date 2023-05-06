@@ -82,12 +82,43 @@ function renderJob(job) {
 }
 
 function dragStart(e) {
-  console.log("drag starts...");
+  //console.log("drag starts...");
   e.dataTransfer.setData("text/plain", e.target.id);
   // hide component afer dragStart finish
   setTimeout(() => {
     e.target.classList.add("hide");
   }, 0);
+}
+
+const jobsBoxes = document.querySelectorAll(".jobs-container");
+
+jobsBoxes.forEach((jobsbox) => {
+  jobsbox.addEventListener("dragenter", dragEnter);
+  jobsbox.addEventListener("dragover", dragOver);
+  jobsbox.addEventListener("dragleave", dragLeave);
+  jobsbox.addEventListener("drop", drop);
+});
+
+function dragEnter(e) {
+  e.preventDefault();
+
+  e.target.parentNode.classList.add("drag-over");
+}
+function dragOver(e) {
+  e.preventDefault();
+  e.target.parentNode.classList.add("drag-over");
+}
+function dragLeave(e) {
+  e.target.parentNode.classList.remove("drag-over");
+}
+function drop(e) {
+  e.target.parentNode.classList.remove("drag-over");
+
+  // get the draggable element
+  const id = e.dataTransfer.getData("text/plain");
+  const draggable = document.getElementById(id);
+  e.target.appendChild(draggable);
+  draggable.classList.remove("hide");
 }
 
 const closeModalBtn = document.querySelector(".close-btn");

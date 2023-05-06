@@ -152,3 +152,7 @@ form {
 .hide {
     display: none;
 }
+
+.drag-over {
+    border: solid 2px red;
+}
