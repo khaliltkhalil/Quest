@@ -103,6 +103,7 @@ form {
     top: 200px;
     margin: auto;
     width: 40%;
+    max-width: 500px;
     height: 275px;
     padding: 20px;
 }
