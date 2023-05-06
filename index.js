@@ -57,6 +57,9 @@ function renderJob(job) {
   jobComponent.appendChild(location);
   jobComponent.className = "job-component";
   jobComponent.setAttribute("draggable", true);
+
+  jobComponent.addEventListener("dragstart", dragStart);
+
   const editButton = document.createElement("button");
   editButton.textContent = "Edit";
   editButton.className = "btn edit-btn";
@@ -76,6 +79,10 @@ function renderJob(job) {
 
   jobComponent.appendChild(editButton);
   jobsContainer.appendChild(jobComponent);
+}
+
+function dragStart(e) {
+  console.log("drag starts...");
 }
 
 const closeModalBtn = document.querySelector(".close-btn");
