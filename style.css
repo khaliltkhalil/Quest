@@ -148,3 +148,7 @@ form {
 .edit-btn{
     font-size: 12px;
 }
+
+.hide {
+    display: none;
+}

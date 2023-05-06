@@ -83,6 +83,11 @@ function renderJob(job) {
 
 function dragStart(e) {
   console.log("drag starts...");
+  e.dataTransfer.setData("text/plain", e.target.id);
+  // hide component afer dragStart finish
+  setTimeout(() => {
+    e.target.classList.add("hide");
+  }, 0);
 }
 
 const closeModalBtn = document.querySelector(".close-btn");
