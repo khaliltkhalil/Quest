@@ -13,6 +13,14 @@ function fetchJobs() {
 const form = document.querySelector("#add-job-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  if (
+    !e.target.title.value ||
+    !e.target.company.value ||
+    !e.target.location.value
+  ) {
+    showAlert();
+    return;
+  }
   const newJob = {
     title: e.target.title.value,
     company: e.target.company.value,
@@ -191,4 +199,12 @@ function openMoodal() {
 function closeModal() {
   document.querySelector("#modal").style.display = "none";
   document.body.style.overflow = "auto";
+}
+
+function showAlert() {
+  const alert = document.getElementById("alert");
+  alert.classList.remove("hidden");
+  setTimeout(() => {
+    alert.classList.add("hidden");
+  }, 3000);
 }

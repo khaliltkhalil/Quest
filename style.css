@@ -160,3 +160,12 @@ form {
 .drag-over {
     border: solid 2px red;
 }
+
+#alert {
+    text-align: center;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
