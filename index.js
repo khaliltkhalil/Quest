@@ -125,8 +125,20 @@ function drop(e) {
   e.target.parentNode.classList.remove("drag-over");
   // get the draggable element
   const id = e.dataTransfer.getData("text/plain");
+  const jobId = id.substring(4);
+  const newStatus = e.target.getAttribute("id");
+  console.log(jobId);
+  console.log(newStatus);
   const draggable = document.getElementById(id);
   e.target.appendChild(draggable);
+  fetch(`http://localhost:3000/jobs/${jobId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({ status: newStatus }),
+  }).then((res) => res.json());
 }
 
 const closeModalBtn = document.querySelector(".close-btn");
