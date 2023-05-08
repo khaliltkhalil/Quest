@@ -13,20 +13,13 @@ function fetchJobs() {
 const form = document.querySelector("#add-job-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (
-    !e.target.title.value ||
-    !e.target.company.value ||
-    !e.target.location.value
-  ) {
+  const data = new FormData(e.target);
+  const newJob = Object.fromEntries(data.entries());
+  if (!Object.values(newJob).every(Boolean)) {
     showAlert();
     return;
   }
-  const newJob = {
-    title: e.target.title.value,
-    company: e.target.company.value,
-    location: e.target.location.value,
-    status: e.target.status.value,
-  };
+
   fetch("http://localhost:3000/jobs", {
     method: "POST",
     headers: {
@@ -76,6 +69,7 @@ function renderJob(job) {
     openMoodal();
 
     document.querySelector("#job-id").textContent = `${job.id}`;
+    // get the job component
     const jobComponent = document.querySelector(`#job-${job.id}`);
     const currentContainer = jobComponent.parentNode;
     const status = currentContainer.getAttribute("id");
@@ -91,18 +85,15 @@ function renderJob(job) {
 }
 
 function dragStart(e) {
-  //console.log("drag starts...");
   e.dataTransfer.setData("text/plain", e.target.id);
-  // hide component afer dragStart finish
-  setTimeout(() => {
-    e.target.classList.add("transparent");
-  }, 0);
+  e.target.classList.add("transparent");
 }
 
 function dragEnd(e) {
   e.target.classList.remove("transparent");
 }
 
+// add drag events to all jobs containers
 const jobsContainers = document.querySelectorAll(".jobs-container");
 
 jobsContainers.forEach((jobsContainer) => {
@@ -135,8 +126,6 @@ function drop(e) {
   const id = e.dataTransfer.getData("text/plain");
   const jobId = id.substring(4);
   const newStatus = e.target.getAttribute("id");
-  console.log(jobId);
-  console.log(newStatus);
   const draggable = document.getElementById(id);
   e.target.appendChild(draggable);
   fetch(`http://localhost:3000/jobs/${jobId}`, {
@@ -183,6 +172,7 @@ function editJobComponent(job) {
   jobComponent.querySelector("h3").textContent = job.title;
   jobComponent.querySelector("h4").textContent = job.company;
   jobComponent.querySelector("p").textContent = job.location;
+  // move job component to the new container if status is changed
   if (job.status !== currentStatus) {
     const newContainer = document.querySelector(`#${job.status}`);
     newContainer.appendChild(jobComponent);

@@ -5,14 +5,14 @@
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "applied"
+      "status": "rejected"
     },
     {
       "id": 2,
       "title": "Software Engineer II",
       "company": "Google",
       "location": "Los Angels, CA",
-      "status": "rejected"
+      "status": "interview"
     },
     {
       "id": 3,
@@ -46,7 +46,7 @@
       "title": "IOS Engineer I",
       "company": "Apple",
       "location": "San Francesco, CA",
-      "status": "interview",
+      "status": "rejected",
       "id": 10
     },
     {
@@ -55,6 +55,20 @@
       "location": "Austin, Tx",
       "status": "offer",
       "id": 11
+    },
+    {
+      "title": "Web Developer",
+      "company": "IBM",
+      "location": "San Diego, CA",
+      "status": "applied",
+      "id": 12
+    },
+    {
+      "title": "Back end Engineer",
+      "company": "HPE",
+      "location": "Spring, Tx",
+      "status": "applied",
+      "id": 13
     }
   ]
 }
