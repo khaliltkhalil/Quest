@@ -13,8 +13,8 @@ function fetchJobs() {
 const form = document.querySelector("#add-job-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const data = new FormData(e.target);
-  const newJob = Object.fromEntries(data.entries());
+  const jobData = new FormData(e.target);
+  const newJob = Object.fromEntries(jobData.entries());
   if (!Object.values(newJob).every(Boolean)) {
     showAlert();
     return;
@@ -35,6 +35,43 @@ form.addEventListener("submit", (e) => {
       e.target.company.value = "";
       e.target.location.value = "";
       e.target.status.value = "applied";
+    });
+});
+
+// add drag events to all jobs containers
+const jobsContainers = document.querySelectorAll(".jobs-container");
+
+jobsContainers.forEach((jobsContainer) => {
+  jobsContainer.addEventListener("dragenter", dragEnter);
+  jobsContainer.addEventListener("dragover", dragOver);
+  jobsContainer.addEventListener("dragleave", dragLeave);
+  jobsContainer.addEventListener("drop", drop);
+});
+
+const closeModalBtn = document.querySelector(".close-btn");
+closeModalBtn.addEventListener("click", closeModal);
+
+const editForm = document.querySelector("#edit-form");
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const jobId = document.querySelector("#job-id").textContent;
+  const editedJob = {
+    title: e.target.editTitle.value,
+    company: e.target.editCompany.value,
+    location: e.target.editLocation.value,
+    status: e.target.editStatus.value,
+  };
+  fetch(`http://localhost:3000/jobs/${jobId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(editedJob),
+  })
+    .then((res) => res.json())
+    .then((job) => {
+      editJobComponent(job);
     });
 });
 
@@ -66,7 +103,7 @@ function renderJob(job) {
   editButton.textContent = "Edit";
   editButton.className = "btn edit-btn";
   editButton.addEventListener("click", () => {
-    openMoodal();
+    openModal();
 
     document.querySelector("#job-id").textContent = `${job.id}`;
     // get the job component
@@ -92,16 +129,6 @@ function dragStart(e) {
 function dragEnd(e) {
   e.target.classList.remove("transparent");
 }
-
-// add drag events to all jobs containers
-const jobsContainers = document.querySelectorAll(".jobs-container");
-
-jobsContainers.forEach((jobsContainer) => {
-  jobsContainer.addEventListener("dragenter", dragEnter);
-  jobsContainer.addEventListener("dragover", dragOver);
-  jobsContainer.addEventListener("dragleave", dragLeave);
-  jobsContainer.addEventListener("drop", drop);
-});
 
 function dragEnter(e) {
   // make sure the dropzone is not another job component
@@ -138,33 +165,6 @@ function drop(e) {
   }).then((res) => res.json());
 }
 
-const closeModalBtn = document.querySelector(".close-btn");
-closeModalBtn.addEventListener("click", closeModal);
-
-const editForm = document.querySelector("#edit-form");
-editForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const jobId = document.querySelector("#job-id").textContent;
-  const editedJob = {
-    title: e.target.editTitle.value,
-    company: e.target.editCompany.value,
-    location: e.target.editLocation.value,
-    status: e.target.editStatus.value,
-  };
-  fetch(`http://localhost:3000/jobs/${jobId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(editedJob),
-  })
-    .then((res) => res.json())
-    .then((job) => {
-      editJobComponent(job);
-    });
-});
-
 function editJobComponent(job) {
   const jobComponent = document.querySelector(`#job-${job.id}`);
   const currentContainer = jobComponent.parentNode;
@@ -181,7 +181,7 @@ function editJobComponent(job) {
   closeModal();
 }
 
-function openMoodal() {
+function openModal() {
   document.querySelector("#modal").style.display = "block";
   document.body.style.overflow = "hidden";
 }
