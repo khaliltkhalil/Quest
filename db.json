@@ -1,13 +1,6 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "title": "Software Engineer I",
-      "company": "Google",
-      "location": "Austin, Tx",
-      "status": "offer"
-    },
-    {
       "id": 2,
       "title": "Software Engineer II",
       "company": "Google",
@@ -22,18 +15,11 @@
       "status": "interview"
     },
     {
-      "id": 4,
-      "title": "full Stack Engineer I",
-      "company": "Google",
-      "location": "Austin, Tx",
-      "status": "applied"
-    },
-    {
       "id": 5,
       "title": "Software Engineer I",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "interview"
+      "status": "applied"
     },
     {
       "title": "Product Engineer",
@@ -53,22 +39,29 @@
       "title": "Machine Learning ",
       "company": "Google",
       "location": "Austin, Tx",
-      "status": "rejected",
+      "status": "interview",
       "id": 11
     },
     {
       "title": "Web Developer I",
       "company": "IBM",
       "location": "San Diego, CA",
-      "status": "applied",
+      "status": "rejected",
       "id": 12
     },
     {
       "title": "Back end Engineer",
       "company": "HPE",
       "location": "Spring, Tx",
-      "status": "offer",
+      "status": "interview",
       "id": 13
+    },
+    {
+      "title": "Full Stack Engineer",
+      "company": "Amzon",
+      "location": "Houston, Tx",
+      "status": "interview",
+      "id": 14
     }
   ]
 }
