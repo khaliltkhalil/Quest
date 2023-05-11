@@ -32,6 +32,11 @@ You can move a job to a different status by dragging and droping the job in the 
 
 ![](https://github.com/khaliltkhalil/Quest/blob/main/Quest-demo.gif)
 
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
